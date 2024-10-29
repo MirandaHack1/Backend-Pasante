@@ -1,8 +1,8 @@
-//CREACION DE VISTAS
-const tarea = require("../Controlador/user.controller.js");
-var router = require("express").Router();
+const authJwt = require("../middlewares/authJwt");
+const user = require ("../Controlador/user.controller.js");
+let router = require ("express").Router();
 
-
-router.post("/", user.create);
+//crear usuario
+router.post("/", user.newUser);
 
 module.exports = router;

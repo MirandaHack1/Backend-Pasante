@@ -15,7 +15,15 @@ module.exports = (sequelize, Sequelize) => {
         loContrasena : {
             type: Sequelize.STRING,
             allowNull: true
+        }, loNombre: {
+            type:Sequelize.STRING,
+            allowNull: true
         },
+        loApellido: {
+            type:Sequelize.STRING,
+            allowNull: true
+        },
+
     }, {
         createdAt: false,
         updatedAt: false,

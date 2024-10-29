@@ -7,8 +7,9 @@ const port = 3000;
 // const Trouter = require('./Routest/tarea.routes.js');
 
 var loginRouter = require('./Routest/login.routes.js');
+let userRouter = require('./Routest/user.routes.js');
 
-let  userRouter = require('./Routest/user.routes.js');
+
 
 
 
@@ -30,6 +31,7 @@ app.use('/api/tareas', Trouter);
 app.use('/api/login', loginRouter);
 
 app.use('/api/user', userRouter);
+
 
 
 app.listen(port, () => {
