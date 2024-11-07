@@ -10,7 +10,6 @@ exports.newUser = async (req, res) => {
                 message: "Faltan datos"
             });
         }
-
         // Generar salt y encriptar la contraseña
         const salt = await bcrypt.genSalt(10);
         const contrasenaEnciptada = await bcrypt.hash(req.body.loContrasena, salt);
@@ -18,7 +17,7 @@ exports.newUser = async (req, res) => {
         let login = {
             loCorreo: req.body.loCorreo,
             loContrasena: contrasenaEnciptada,
-            loNombre: req.body.loNombre,
+            loNombre: req.body.loNombre, 
             loApellido: req.body.loApellido,
         };
 
@@ -29,7 +28,6 @@ exports.newUser = async (req, res) => {
             status: 200,
             data: newUser
         });
-        res.send(respuesta);
     } catch (error) {
         res.status(500).send({ message: error.message });
     }

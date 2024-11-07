@@ -1,14 +1,13 @@
 const express = require('express');
 const cors = require('cors');
-const Trouter = require('./Routest/tarea.routes.js');
 const app = express();
 const port = 3000;
 
 // const Trouter = require('./Routest/tarea.routes.js');
-
+const Trouter = require('./Routest/tarea.routes.js');
 var loginRouter = require('./Routest/login.routes.js');
 let userRouter = require('./Routest/user.routes.js');
-
+let clienteRouter = require('./Routest/cliente.routes.js');
 
 
 
@@ -31,7 +30,7 @@ app.use('/api/tareas', Trouter);
 app.use('/api/login', loginRouter);
 
 app.use('/api/user', userRouter);
-
+app.use('/api/cliente', clienteRouter);   
 
 
 app.listen(port, () => {
